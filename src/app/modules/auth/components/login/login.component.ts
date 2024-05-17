@@ -12,7 +12,6 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./login.component.scss'],
 })
 export class LoginComponent implements OnInit, OnDestroy {
-  // KeenThemes mock, change it to:
   defaultAuth: any = {
     email: 'admin@demo.com',
     password: 'demo',
@@ -22,8 +21,7 @@ export class LoginComponent implements OnInit, OnDestroy {
   returnUrl: string;
   isLoading$: Observable<boolean>;
 
-  // private fields
-  private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
+  private unsubscribe: Subscription[] = [];
 
   constructor(
     private fb: FormBuilder,
@@ -32,20 +30,16 @@ export class LoginComponent implements OnInit, OnDestroy {
     private router: Router
   ) {
     this.isLoading$ = this.authService.isLoading$;
-    // redirect to home if already logged in
     if (this.authService.currentUserValue) {
-      this.router.navigate(['/']);
+      this.router.navigate(['/']); // Redirect to dashboard if already logged in
     }
   }
 
   ngOnInit(): void {
     this.initForm();
-    // get return url from route parameters or default to '/'
-    this.returnUrl =
-      this.route.snapshot.queryParams['returnUrl'.toString()] || '/';
+    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/dashboard'; // Set default to dashboard
   }
 
-  // convenience getter for easy access to form fields
   get f() {
     return this.loginForm.controls;
   }
@@ -58,7 +52,7 @@ export class LoginComponent implements OnInit, OnDestroy {
           Validators.required,
           Validators.email,
           Validators.minLength(3),
-          Validators.maxLength(320), // https://stackoverflow.com/questions/386294/what-is-the-maximum-length-of-a-valid-email-address
+          Validators.maxLength(320),
         ]),
       ],
       password: [
@@ -74,13 +68,16 @@ export class LoginComponent implements OnInit, OnDestroy {
 
   submit() {
     this.hasError = false;
+    console.log('Submitting form with:', this.f.email.value, this.f.password.value); // Debug log
     const loginSubscr = this.authService
       .login(this.f.email.value, this.f.password.value)
       .pipe(first())
       .subscribe((user: UserModel | undefined) => {
         if (user) {
+          console.log('Login successful, redirecting to:', this.returnUrl); // Debug log
           this.router.navigate([this.returnUrl]);
         } else {
+          console.log('Login failed'); // Debug log
           this.hasError = true;
         }
       });

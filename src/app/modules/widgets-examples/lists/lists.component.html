@@ -1,44 +1,74 @@
-<!-- begin::Row -->
-<div class="row g-5 g-xl-8">
-  <div class="col-xl-4">
-    <app-lists-widget1 class="card card-xl-stretch mb-xl-8"></app-lists-widget1>
-  </div>
-  <div class="col-xl-4">
-    <app-lists-widget2 class="card card-xl-stretch mb-xl-8"></app-lists-widget2>
-  </div>
-  <div class="col-xl-4">
-    <app-lists-widget3
-      class="card card-xl-stretch mb-5 mb-xl-8"
-    ></app-lists-widget3>
+<div class="filter-container">
+  <input type="text" placeholder="Filter courses..." (input)="filterCourses($event)">
+</div>
+<div class="course-list">
+  <div *ngFor="let course of filteredCourses" (click)="navigateToOverview(course)" class="course-item">
+    <div class="course-header">
+      <h2>{{ course.name }}</h2>
+    </div>
+    <div class="course-body">
+      <p>{{ course.description }}</p>
+    </div>
+    <div class="course-footer">
+      <p><strong>Type:</strong> {{ course.type }}</p>
+      <p><strong>Professor:</strong> {{ course.professor }}</p>
+    </div>
   </div>
 </div>
-<!-- end::Row -->
 
-<!-- begin::Row -->
-<div class="row g-5 g-xl-8">
-  <div class="col-xl-4">
-    <app-lists-widget4 class="card card-xl-stretch mb-xl-8"></app-lists-widget4>
-  </div>
-  <div class="col-xl-4">
-    <app-lists-widget5 class="card card-xl-stretch mb-xl-8"></app-lists-widget5>
-  </div>
-  <div class="col-xl-4">
-    <app-lists-widget6
-      class="card card-xl-stretch mb5 mb-xl-8"
-    ></app-lists-widget6>
-  </div>
-</div>
-<!-- end::Row -->
-
-<!-- begin::Row -->
-<div class="row g-5 g-xl-8">
-  <div class="col-xl-6">
-    <app-lists-widget7 class="card card-xl-stretch mb-xl-8"></app-lists-widget7>
-  </div>
-  <div class="col-xl-6">
-    <app-lists-widget8
-      class="card card-xl-stretch mb5 mb-xl-8"
-    ></app-lists-widget8>
-  </div>
-</div>
-<!-- end::Row -->
+<style>
+  .filter-container {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  .filter-container input {
+    width: 50%;
+    padding: 10px;
+    border: 1px solid #ced4da;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+  .course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .course-item {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    padding: 15px;
+    width: 300px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+    background-color: #fff;
+  }
+  .course-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+  .course-header {
+    background-color: #343a40; /* Dark color to match the sidebar */
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    text-align: center;
+  }
+  .course-header h2 {
+    margin: 0;
+    font-size: 1.5em;
+    color: #fff; /* White text to contrast with dark background */
+  }
+  .course-body {
+    padding: 10px 0;
+    color: #495057; /* Dark grey text */
+  }
+  .course-footer {
+    padding-top: 10px;
+    border-top: 1px solid #e9ecef;
+    color: #adb5bd; /* Light grey text */
+  }
+  .course-footer p {
+    margin: 5px 0;
+  }
+</style>

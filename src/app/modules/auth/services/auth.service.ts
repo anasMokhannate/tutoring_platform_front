@@ -13,11 +13,9 @@ export type UserType = UserModel | undefined;
   providedIn: 'root',
 })
 export class AuthService implements OnDestroy {
-  // private fields
-  private unsubscribe: Subscription[] = []; // Read more: => https://brianflove.com/2016/12/11/anguar-2-unsubscribe-observables/
+  private unsubscribe: Subscription[] = [];
   private authLocalStorageToken = `${environment.appVersion}-${environment.USERDATA_KEY}`;
 
-  // public fields
   currentUser$: Observable<UserType>;
   isLoading$: Observable<boolean>;
   currentUserSubject: BehaviorSubject<UserType>;
@@ -43,17 +41,18 @@ export class AuthService implements OnDestroy {
     this.unsubscribe.push(subscr);
   }
 
-  // public methods
   login(email: string, password: string): Observable<UserType> {
     this.isLoadingSubject.next(true);
+    console.log('AuthService: Attempting login with', email, password); // Debug log
     return this.authHttpService.login(email, password).pipe(
       map((auth: AuthModel) => {
+        console.log('AuthService: AuthModel received', auth); // Debug log
         const result = this.setAuthFromLocalStorage(auth);
         return result;
       }),
       switchMap(() => this.getUserByToken()),
       catchError((err) => {
-        console.error('err', err);
+        console.error('AuthService: Login error', err); // Debug log
         return of(undefined);
       }),
       finalize(() => this.isLoadingSubject.next(false))
@@ -61,6 +60,7 @@ export class AuthService implements OnDestroy {
   }
 
   logout() {
+    console.log('AuthService: Logging out'); // Debug log
     localStorage.removeItem(this.authLocalStorageToken);
     this.router.navigate(['/auth/login'], {
       queryParams: {},
@@ -70,6 +70,7 @@ export class AuthService implements OnDestroy {
   getUserByToken(): Observable<UserType> {
     const auth = this.getAuthFromLocalStorage();
     if (!auth || !auth.authToken) {
+      console.log('AuthService: No auth token found'); // Debug log
       return of(undefined);
     }
 
@@ -77,6 +78,7 @@ export class AuthService implements OnDestroy {
     return this.authHttpService.getUserByToken(auth.authToken).pipe(
       map((user: UserType) => {
         if (user) {
+          console.log('AuthService: User fetched by token', user); // Debug log
           this.currentUserSubject.next(user);
         } else {
           this.logout();
@@ -87,7 +89,6 @@ export class AuthService implements OnDestroy {
     );
   }
 
-  // need create new user then login
   registration(user: UserModel): Observable<any> {
     this.isLoadingSubject.next(true);
     return this.authHttpService.createUser(user).pipe(
@@ -96,7 +97,7 @@ export class AuthService implements OnDestroy {
       }),
       switchMap(() => this.login(user.email, user.password)),
       catchError((err) => {
-        console.error('err', err);
+        console.error('AuthService: Registration error', err); // Debug log
         return of(undefined);
       }),
       finalize(() => this.isLoadingSubject.next(false))
@@ -110,10 +111,9 @@ export class AuthService implements OnDestroy {
       .pipe(finalize(() => this.isLoadingSubject.next(false)));
   }
 
-  // private methods
   private setAuthFromLocalStorage(auth: AuthModel): boolean {
-    // store auth authToken/refreshToken/epiresIn in local storage to keep user logged in between page refreshes
     if (auth && auth.authToken) {
+      console.log('AuthService: Storing auth token', auth); // Debug log
       localStorage.setItem(this.authLocalStorageToken, JSON.stringify(auth));
       return true;
     }
@@ -126,11 +126,11 @@ export class AuthService implements OnDestroy {
       if (!lsValue) {
         return undefined;
       }
-
       const authData = JSON.parse(lsValue);
+      console.log('AuthService: Retrieved auth token from local storage', authData); // Debug log
       return authData;
     } catch (error) {
-      console.error(error);
+      console.error('AuthService: Error retrieving auth token from local storage', error); // Debug log
       return undefined;
     }
   }
