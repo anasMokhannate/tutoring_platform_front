@@ -5,6 +5,7 @@ import { Course } from '../../../modules/auth/models/course.model';
 @Component({
   selector: 'app-overview',
   templateUrl: './overview.component.html',
+  styleUrls: ['./overview.component.scss'],
 })
 export class OverviewComponent implements OnInit {
   course: Course | undefined;

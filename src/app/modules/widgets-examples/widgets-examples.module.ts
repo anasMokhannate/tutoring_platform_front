@@ -7,6 +7,7 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { ChartsComponent } from './charts/charts.component';
 import { TablesComponent } from './tables/tables.component';
 import { WidgetsModule } from '../../_metronic/partials';
+import { PsychologistDashboardComponent } from './psychologist-dashboard/psychologist-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,7 @@ import { WidgetsModule } from '../../_metronic/partials';
     ChartsComponent,
     
     TablesComponent,
+          PsychologistDashboardComponent,
     
   ],
   imports: [CommonModule, WidgetsExamplesRoutingModule, WidgetsModule],

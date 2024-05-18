@@ -1,9 +1,8 @@
 @import "../../../../styles.scss";
 // Palette SCSS
-$dark-blue: #003366;
-$green: #4CAF50;
-$white: #FFFFFF;
-
+$dark-blue: #003366; // A deep, dark blue
+$create-blue: #2196F3; // Vibrant blue similar to the "Create" button
+$white: #FFFFFF; // Clean white for backgrounds and text
 
 .meeting-requests {
   background-color: $white;
@@ -13,26 +12,41 @@ $white: #FFFFFF;
 
   h2 {
     color: $dark-blue;
+    margin-bottom: 15px; // Ensure spacing under headers for visual separation
   }
 
-  .form-group label {
-    color: $dark-blue;
+  .form-group {
+    margin-bottom: 20px; // Spacing between form groups
+
+    label {
+      color: $dark-blue;
+      font-weight: 600; // Slightly bolder for better readability
+    }
   }
 
-  .btn-primary {
-    background-color: $dark-blue;
-    border-color: $dark-blue;
+  .btn-request {
+    background-color: $create-blue;
+    border: none;
+    border-radius: 4px;
+    color: $white;
+    padding: 8px 16px; // Adequate padding for aesthetic alignment
+    font-size: 16px; // Appropriately sized font for readability and impact
+    text-transform: uppercase; // Styling to match your 'Create' button
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 30px; // Increased top margin to push the button downward
+
     &:hover {
-      background-color: darken($dark-blue, 5%);
-      border-color: darken($dark-blue, 5%);
+      background-color: darken($create-blue, 10%); // Darken for a subtle hover effect
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Shadow for depth on hover
     }
   }
 
   .form-control {
     border: 1px solid $dark-blue;
     &:focus {
-      border-color: lighten($dark-blue, 10%);
-      box-shadow: 0 0 0 0.2rem rgba($dark-blue, 0.25);
+      border-color: lighten($dark-blue, 10%); // Lighten for a focus highlight
+      box-shadow: 0 0 0 0.2rem rgba($dark-blue, 0.25); // Subtle focus shadow
     }
   }
 
@@ -40,4 +54,3 @@ $white: #FFFFFF;
     min-height: 100px;
   }
 }
-

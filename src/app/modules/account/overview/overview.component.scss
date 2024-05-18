@@ -1,0 +1,60 @@
+@import "../../../../styles.scss"; // Importing global styles
+
+// Color definitions
+$very-dark-blue: #001a33;  // A deeper shade for a profound visual impact
+$white: #ffffff;  // Bright white for contrast and readability
+$accent-green: #4CAF50;  // Vibrant green for call-to-action elements
+
+.card {
+    background-color: $white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Soft shadow for depth
+    margin-bottom: 20px;  // Bottom margin for spacing between cards
+
+    .card-header {
+        background-color: $very-dark-blue;
+        color: $white;
+        padding: 15px 20px;  // Padding for ample space around the header text
+
+        .card-title h3 {
+            margin: 0;  // Remove margin for clean header alignment
+        }
+    }
+
+    .card-body {
+        padding: 20px;
+        color: $very-dark-blue;  // Dark blue text for body content
+
+        .row {
+            margin-bottom: 15px;  // Space between rows
+
+            label {
+                color: $very-dark-blue;  // Labels in dark blue for consistency
+                font-weight: bold;  // Bold font for label emphasis
+                text-transform: uppercase;  // Uppercase text for a modern look
+            }
+
+            .fw-bold {
+                color: darken($very-dark-blue, 10%);  // Slightly darker text for better focus
+            }
+
+            a.btn-secondary {  // Style for download button
+                background-color: $accent-green;
+                color: $white;
+                padding: 8px 16px;
+                border-radius: 4px;
+                text-transform: uppercase;
+                transition: background-color 0.2s;
+
+                &:hover {
+                    background-color: darken($accent-green, 10%);  // Darken on hover for interaction
+                }
+            }
+
+            video {
+                width: 100%;  // Full width for video to utilize available space
+                border-radius: 4px;  // Rounded corners for a modern appearance
+            }
+        }
+    }
+}

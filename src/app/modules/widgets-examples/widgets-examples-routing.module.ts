@@ -6,12 +6,18 @@ import { StatisticsComponent } from './statistics/statistics.component';
 import { TablesComponent } from './tables/tables.component';
 import { WidgetsExamplesComponent } from './widgets-examples.component';
 import { MeetingRequestsComponent } from './meeting-requests/meeting-requests.component';
+import { PsychologistDashboardComponent } from './psychologist-dashboard/psychologist-dashboard.component';
+
 
 const routes: Routes = [
   {
     path: '',
     component: WidgetsExamplesComponent,
     children: [
+      {
+        path: 'psychologist-dashboard',
+        component: PsychologistDashboardComponent,
+      },
       {
         path: 'meeting-requests',
         component: MeetingRequestsComponent,

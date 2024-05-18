@@ -1,0 +1,71 @@
+@import "../../../../styles.scss"; // Importing global styles
+
+// Defining colors
+$dark-blue: #002244;  // An even darker shade of blue
+$light-gray: #f8f9fa;  // Light gray for subtle backgrounds
+$green: #4CAF50;  // Green for accents and actions
+$white: #FFFFFF;  // White for text and clean contrasts
+
+.course-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.course-item {
+    background-color: $white;
+    border: 1px solid $dark-blue;  // Using the darker blue for borders
+    border-radius: 8px;
+    padding: 15px;
+    width: 300px;  // Fixed width for uniformity
+    box-shadow: 0 2px 5px rgba($dark-blue, 0.2);  // Subtle shadow for depth
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 10px rgba($dark-blue, 0.25);  // Enhance shadow on hover for a dynamic effect
+    }
+
+    .course-header {
+        background-color: $dark-blue;  // Even darker blue for headers
+        padding: 10px;
+        border-radius: 8px 8px 0 0;
+        text-align: center;
+
+        h2 {
+            color: $white;
+            margin: 0;
+            font-size: 1.5em;
+        }
+    }
+
+    .course-body {
+        padding: 10px;
+        color: $dark-blue;  // Using the darker blue for text
+    }
+
+    .course-footer {
+        padding-top: 10px;
+        border-top: 1px solid $light-gray;  // Light gray for a soft separator
+        color: $green;  // Green text for footer details
+
+        p {
+            margin: 5px 0;
+        }
+    }
+}
+
+.filter-container {
+    margin-bottom: 20px;
+    text-align: center;
+
+    input {
+        width: 50%;
+        padding: 10px;
+        border: 1px solid $dark-blue;  // Border color changed to the darker blue
+        border-radius: 5px;
+        box-shadow: 0 2px 5px rgba($dark-blue, 0.1);
+    }
+}

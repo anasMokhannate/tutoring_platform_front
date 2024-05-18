@@ -1,0 +1,30 @@
+<!-- src/app/modules/widgets-examples/psychologist-dashboard/psychologist-dashboard.component.html -->
+<div class="psychologist-dashboard">
+    <h2>Manage Requests</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Student Name</th>
+          <th>Type</th>
+          <th>Description</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let request of requests">
+          <td>{{ request.id }}</td>
+          <td>{{ request.studentName }}</td>
+          <td>{{ request.requestType }}</td>
+          <td>{{ request.description }}</td>
+          <td>{{ request.status }}</td>
+          <td>
+            <button class="accept-button" (click)="acceptRequest(request)" [disabled]="request.status !== 'Pending'">Accept</button>
+            <button class="deny-button" (click)="denyRequest(request)" [disabled]="request.status !== 'Pending'">Deny</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
