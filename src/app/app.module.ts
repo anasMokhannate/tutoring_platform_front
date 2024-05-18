@@ -13,6 +13,8 @@ import { AuthService } from './modules/auth/services/auth.service';
 import { environment } from 'src/environments/environment';
 // #fake-start#
 import { FakeAPIService } from './_fake/fake-api.service';
+import { MeetingRequestsModule } from './modules/widgets-examples/meeting-requests/meeting-requests.module';
+
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -31,6 +33,7 @@ function appInitializer(authService: AuthService) {
     TranslateModule.forRoot(),
     HttpClientModule,
     ClipboardModule,
+    MeetingRequestsModule,  // Ensure MeetingRequestsModule is imported
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {

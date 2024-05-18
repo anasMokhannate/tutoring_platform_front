@@ -1,0 +1,43 @@
+@import "../../../../styles.scss";
+// Palette SCSS
+$dark-blue: #003366;
+$green: #4CAF50;
+$white: #FFFFFF;
+
+
+.meeting-requests {
+  background-color: $white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  h2 {
+    color: $dark-blue;
+  }
+
+  .form-group label {
+    color: $dark-blue;
+  }
+
+  .btn-primary {
+    background-color: $dark-blue;
+    border-color: $dark-blue;
+    &:hover {
+      background-color: darken($dark-blue, 5%);
+      border-color: darken($dark-blue, 5%);
+    }
+  }
+
+  .form-control {
+    border: 1px solid $dark-blue;
+    &:focus {
+      border-color: lighten($dark-blue, 10%);
+      box-shadow: 0 0 0 0.2rem rgba($dark-blue, 0.25);
+    }
+  }
+
+  textarea {
+    min-height: 100px;
+  }
+}
+

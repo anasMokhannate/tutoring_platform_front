@@ -1,0 +1,46 @@
+<!-- Meeting Requests Component HTML -->
+<div class="meeting-requests">
+    <h2>Meeting Requests</h2>
+    <mat-tab-group animationDuration="500ms">
+        <mat-tab label="Psychologist Support">
+            <form [formGroup]="psychologistForm" (ngSubmit)="submitPsychologistRequest()">
+                <div class="form-group">
+                    <label for="psychologist">Select Psychologist:</label>
+                    <select formControlName="psychologist" class="form-control">
+                        <!-- Dynamically populate from backend -->
+                        <option *ngFor="let psychologist of psychologists" [value]="psychologist.id">{{ psychologist.name }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="student">Student Name:</label>
+                    <input type="text" formControlName="student" class="form-control" placeholder="Enter student name">
+                </div>
+                <div class="form-group">
+                    <label for="description">Description:</label>
+                    <textarea formControlName="description" rows="3" class="form-control" placeholder="Describe the consultation needs"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!psychologistForm.valid">Request Session</button>
+            </form>
+        </mat-tab>
+        <mat-tab label="Course Session">
+            <form [formGroup]="courseSessionForm" (ngSubmit)="submitCourseSessionRequest()">
+                <div class="form-group">
+                    <label for="course">Select Course:</label>
+                    <select formControlName="course" class="form-control">
+                        <!-- Dynamically populate from backend -->
+                        <option *ngFor="let course of courses" [value]="course.id">{{ course.title }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="instructor">Instructor:</label>
+                    <input type="text" formControlName="instructor" class="form-control" placeholder="Enter instructor's name">
+                </div>
+                <div class="form-group">
+                    <label for="sessionDetails">Session Details:</label>
+                    <textarea formControlName="sessionDetails" rows="3" class="form-control" placeholder="Describe the session details"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" [disabled]="!courseSessionForm.valid">Request Session</button>
+            </form>
+        </mat-tab>
+    </mat-tab-group>
+</div>
