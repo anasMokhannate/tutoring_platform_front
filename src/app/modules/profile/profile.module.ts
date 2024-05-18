@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { InlineSVGModule } from 'ng-inline-svg';
-import { OverviewComponent } from './overview/overview.component';
-import { DocumentsComponent } from './documents/documents.component';
 import { ProfileRoutingModule } from './profile-routing.module';
 import { ProfileComponent } from './profile.component';
+import { OverviewComponent } from './overview/overview.component';
+import { DocumentsComponent } from './documents/documents.component';
 import { ConnectionsComponent } from './connections/connections.component';
 import {
   CardsModule,
@@ -16,8 +16,6 @@ import {
   declarations: [
     ProfileComponent,
     OverviewComponent,
-    
-    
     DocumentsComponent,
     ConnectionsComponent,
   ],

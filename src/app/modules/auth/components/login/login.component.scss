@@ -1,1 +1,52 @@
+body {
+  background-color: #001f3f; // Bleu marine
+  color: #ffffff; // Texte blanc
+  font-family: 'Arial', sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+#kt_login_signin_form {
+  background-color: rgba(255, 255, 255, 0.9); // Blanc avec transparence
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  width: 100%;
+}
+
+.text-dark {
+  color: #001f3f !important; // Texte bleu marine
+}
+
+.link-primary {
+  color: #007bff !important; // Liens en bleu clair
+}
+
+.form-control {
+  background-color: #ffffff; // Champs de saisie blancs
+  color: #001f3f; // Texte des champs de saisie en bleu marine
+}
+
+.btn-primary {
+  background-color: #001f3f; // Boutons en bleu marine
+  border-color: #001f3f;
+  color: #ffffff; // Texte des boutons en blanc
+}
+
+.btn-primary:hover {
+  background-color: #004080; // Bleu plus clair au survol
+  border-color: #004080;
+}
+
+.bg-light-info {
+  background-color: rgba(0, 123, 255, 0.2) !important; // Bleu clair avec transparence
+}
+
+.alert-danger {
+  background-color: rgba(255, 0, 0, 0.1) !important; // Rouge clair avec transparence
+  color: #ff0000 !important; // Texte rouge
+}
