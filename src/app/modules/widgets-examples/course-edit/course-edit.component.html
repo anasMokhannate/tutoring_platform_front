@@ -1,4 +1,3 @@
-<!-- course-edit.component.html -->
 <div class="edit-course-form">
     <h2>Edit Course</h2>
     <form [formGroup]="editCourseForm" (ngSubmit)="submitEdit()">
@@ -8,10 +7,10 @@
       <textarea formControlName="description" placeholder="Description"></textarea>
       <label>Type:</label>
       <input formControlName="type" type="text" placeholder="Course Type">
-      <label>Video URL:</label>
-      <input formControlName="videoUrl" type="text" placeholder="Video URL">
-      <label>PDF URL:</label>
-      <input formControlName="pdfUrl" type="text" placeholder="PDF URL">
+      <label>Video File:</label>
+      <input type="file" (change)="onFileSelect($event, 'video')">
+      <label>PDF File:</label>
+      <input type="file" (change)="onFileSelect($event, 'pdf')">
       <button type="submit">Update Course</button>
     </form>
   </div>

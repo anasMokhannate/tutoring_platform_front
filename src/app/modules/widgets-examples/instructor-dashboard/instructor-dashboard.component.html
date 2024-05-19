@@ -19,13 +19,17 @@
                 <td>
                     <button class="btn accept-button" (click)="acceptRequest(request)" [disabled]="request.status !== 'Pending'">Accept</button>
                     <button class="btn deny-button" (click)="denyRequest(request)" [disabled]="request.status !== 'Pending'">Deny</button>
-                    <button class="btn edit-button" routerLink="/edit-course/{{request.id}}">Modify</button>
+                    <button class="btn edit-button" [routerLink]="['/course-edit', request.id]">Edit</button>
+
                 </td>
             </tr>
         </tbody>
     </table>
     <a routerLink="/add-course" class="btn btn-primary">Add New Course</a>
+    <a routerLink="/course-edit/:id" class="btn btn-secondary">Edit Course</a>
 </div>
+
+
 
 <style>
 .instructor-dashboard {

@@ -16,7 +16,8 @@ const routes: Routes = [
     path: '',
     component: WidgetsExamplesComponent,
     children: [
-      { path: 'course-edit/:id', component: CourseEditComponent },
+      { path: 'course-edit/:id', 
+      component: CourseEditComponent },
 
       {
         path: 'add-course',
