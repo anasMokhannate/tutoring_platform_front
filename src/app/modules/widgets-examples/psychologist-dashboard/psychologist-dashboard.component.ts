@@ -1,6 +1,5 @@
-// src/app/modules/widgets-examples/psychologist-dashboard/psychologist-dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
-import { Request } from '../meeting-requests/models/request.model';
+import { Request } from '../meeting-requests/models/request.model'; // Ensure the correct path
 
 @Component({
   selector: 'app-psychologist-dashboard',
@@ -8,29 +7,27 @@ import { Request } from '../meeting-requests/models/request.model';
   styleUrls: ['./psychologist-dashboard.component.scss']
 })
 export class PsychologistDashboardComponent implements OnInit {
-  requests: Request[] = [];
-
-  constructor() { }
+  psychologistRequests: Request[] = [];
 
   ngOnInit(): void {
-    this.loadRequests();
+    this.loadPsychologistRequests();
   }
 
-  loadRequests() {
-    // Mock data, replace with actual data fetching from a service
-    this.requests = [
+  loadPsychologistRequests() {
+    // Here, update 'type' to 'requestType' to match the model's property
+    this.psychologistRequests = [
       { id: 1, studentName: 'John Doe', requestType: 'Psychologist Support', description: 'Needs consultation', status: 'Pending' },
-      { id: 2, studentName: 'Jane Smith', requestType: 'Course Session', description: 'Enroll in course', status: 'Pending' }
+      { id: 2, studentName: 'Jane Smith', requestType: 'Psychologist Support', description: 'Follow-up session', status: 'Pending' }
     ];
   }
 
   acceptRequest(request: Request) {
     request.status = 'Accepted';
-    // Call service to update the status in the backend
+    // Implement logic to update the backend via a service
   }
 
   denyRequest(request: Request) {
     request.status = 'Denied';
-    // Call service to update the status in the backend
+    // Implement logic to update the backend via a service
   }
 }

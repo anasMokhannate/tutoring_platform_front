@@ -1,0 +1,23 @@
+<div class="add-course-form">
+    <h2>Add New Course</h2>
+    <form [formGroup]="courseForm" (ngSubmit)="submitCourse()">
+        <div class="form-field">
+            <input formControlName="name" placeholder="Course Name" />
+        </div>
+        <div class="form-field">
+            <input formControlName="description" placeholder="Description" />
+        </div>
+        <div class="form-field">
+            <input formControlName="category" placeholder="Category" />
+        </div>
+        <div class="form-field">
+            <label>Course Video:</label>
+            <input type="file" (change)="onVideoSelected($event)">
+        </div>
+        <div class="form-field">
+            <label>Course PDF:</label>
+            <input type="file" (change)="onPDFSelected($event)">
+        </div>
+        <button type="submit" [disabled]="!courseForm.valid">Submit Course</button>
+    </form>
+</div>

@@ -10,7 +10,7 @@ const routes: Routes = [
     component: AccountComponent,
     children: [
       {
-        path: 'overview',
+        path: 'overview/:id',
         component: OverviewComponent,
       },
       {

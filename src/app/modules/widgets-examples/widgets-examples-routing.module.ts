@@ -7,13 +7,22 @@ import { TablesComponent } from './tables/tables.component';
 import { WidgetsExamplesComponent } from './widgets-examples.component';
 import { MeetingRequestsComponent } from './meeting-requests/meeting-requests.component';
 import { PsychologistDashboardComponent } from './psychologist-dashboard/psychologist-dashboard.component';
-
+import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
+import { AddCourseComponent } from './add-course/add-course.component';
 
 const routes: Routes = [
   {
     path: '',
     component: WidgetsExamplesComponent,
     children: [
+      {
+        path: 'add-course',
+        component: AddCourseComponent,
+      },
+      {
+        path: 'instructor-dashboard',
+        component: InstructorDashboardComponent,
+      },
       {
         path: 'psychologist-dashboard',
         component: PsychologistDashboardComponent,
@@ -49,5 +58,6 @@ const routes: Routes = [
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule],
+
 })
 export class WidgetsExamplesRoutingModule {}

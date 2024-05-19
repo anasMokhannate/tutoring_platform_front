@@ -1,11 +1,10 @@
-<!-- src/app/modules/widgets-examples/psychologist-dashboard/psychologist-dashboard.component.html -->
 <div class="psychologist-dashboard">
-    <h2>Manage Requests</h2>
+    <h2>Manage Psychologist Support Requests</h2>
     <table>
       <thead>
         <tr>
           <th>ID</th>
-          <th>Student Name</th>
+          <th>Student Name</th>  
           <th>Type</th>
           <th>Description</th>
           <th>Status</th>
@@ -13,10 +12,10 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let request of requests">
+        <tr *ngFor="let request of psychologistRequests">
           <td>{{ request.id }}</td>
-          <td>{{ request.studentName }}</td>
-          <td>{{ request.requestType }}</td>
+          <td>{{ request.studentName }}</td>  <!-- Student name displayed -->
+          <td>{{ request.requestType }}</td>  <!-- Changed 'type' to 'requestType' -->
           <td>{{ request.description }}</td>
           <td>{{ request.status }}</td>
           <td>
@@ -26,5 +25,4 @@
         </tr>
       </tbody>
     </table>
-  </div>
-  
+</div>

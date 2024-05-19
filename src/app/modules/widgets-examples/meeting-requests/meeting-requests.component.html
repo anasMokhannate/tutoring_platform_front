@@ -43,4 +43,26 @@
             </form>
         </mat-tab>
     </mat-tab-group>
+    <div class="demand-status">
+        <h3>Demand Status</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Type</th>
+                    <th>Description</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let demand of demands">
+                    <td>{{ demand.id }}</td>
+                    <td>{{ demand.requestType }}</td>
+                    <td>{{ demand.description }}</td>
+                    <td>{{ demand.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>
+

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Course } from '../../../modules/auth/models/course.model';
+import { Course } from '../../auth/models/course.model';
 
 @Component({
   selector: 'app-overview',

@@ -5,5 +5,6 @@ export interface Request {
     requestType: string;  // e.g., 'Psychologist Support', 'Course Session'
     description: string;
     status: 'Pending' | 'Accepted' | 'Denied';  // Request status
+    type?: string; 
   }
   

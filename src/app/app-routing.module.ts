@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { AuthGuard } from './modules/auth/services/auth.guard';
 import { ListsComponent } from './modules/widgets-examples/lists/lists.component';
 import { OverviewComponent } from './modules/account/overview/overview.component';
-
+import { AddCourseComponent } from './modules/widgets-examples/add-course/add-course.component';
 export const routes: Routes = [
   {
     path: 'auth',
@@ -13,6 +13,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/auth/login', pathMatch: 'full' }, // Redirect to login page by default
   { path: 'lists', component: ListsComponent, canActivate: [AuthGuard] }, // Protect the lists route
   { path: 'account/overview/:id', component: OverviewComponent, canActivate: [AuthGuard] }, // Protect the overview route
+  { path: 'add-course', component: AddCourseComponent },
   {
     path: 'error',
     loadChildren: () =>

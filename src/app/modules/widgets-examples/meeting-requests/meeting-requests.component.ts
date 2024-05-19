@@ -17,10 +17,19 @@ export class MeetingRequestsComponent implements OnInit {
   ]; // Static data for courses
   psychologistForm: FormGroup;
   courseSessionForm: FormGroup;
+  demands: any[] = [
+    { id: 1, requestType: 'Psychologist Support', description: 'Needs consultation', status: 'Pending' },
+    { id: 2, requestType: 'Course Session', description: 'Enroll in course', status: 'Approved' }
+  ]; 
+  showTable: boolean = false;  // Variable to toggle the visibility of the demands table
 
   constructor(private fb: FormBuilder) { }
 
   ngOnInit(): void {
+    this.initForms();
+  }
+
+  initForms() {
     this.psychologistForm = this.fb.group({
       psychologist: ['', Validators.required],
       student: ['', Validators.required],
@@ -45,4 +54,9 @@ export class MeetingRequestsComponent implements OnInit {
       console.log('Submitting course session request:', this.courseSessionForm.value);
     }
   }
+
+  toggleTable() {
+    this.showTable = !this.showTable;
+  }
 }
+

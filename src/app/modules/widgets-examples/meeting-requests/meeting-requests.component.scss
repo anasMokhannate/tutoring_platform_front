@@ -1,9 +1,10 @@
 @import "../../../../styles.scss";
 // Palette SCSS
-$dark-blue: #003366; // A deep, dark blue
-$create-blue: #2196F3; // Vibrant blue similar to the "Create" button
-$white: #FFFFFF; // Clean white for backgrounds and text
-
+$dark-blue: #003366; 
+$create-blue: #2196F3; 
+$white: #FFFFFF; 
+$very-dark-blue: #001a33; 
+$light-gray: #f8f9fa; 
 .meeting-requests {
   background-color: $white;
   padding: 20px;
@@ -53,4 +54,28 @@ $white: #FFFFFF; // Clean white for backgrounds and text
   textarea {
     min-height: 100px;
   }
-}
+  .demand-status {
+    margin-top: 30px;
+
+    h3 {
+        color: $dark-blue;
+    }
+
+    .table {
+        width: 100%;
+        border-collapse: collapse;
+        th, td {
+            border: 1px solid $dark-blue;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: $very-dark-blue;
+            color: $white;
+        }
+        tr:nth-child(odd) {
+            background-color: $light-gray;
+        }
+    }
+
+}}

@@ -1,4 +1,5 @@
 import { NgModule } from '@angular/core';
+import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { WidgetsExamplesRoutingModule } from './widgets-examples-routing.module';
 import { WidgetsExamplesComponent } from './widgets-examples.component';
@@ -8,6 +9,9 @@ import { ChartsComponent } from './charts/charts.component';
 import { TablesComponent } from './tables/tables.component';
 import { WidgetsModule } from '../../_metronic/partials';
 import { PsychologistDashboardComponent } from './psychologist-dashboard/psychologist-dashboard.component';
+import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,11 +19,12 @@ import { PsychologistDashboardComponent } from './psychologist-dashboard/psychol
     ListsComponent,
     StatisticsComponent,
     ChartsComponent,
-    
+    InstructorDashboardComponent,
     TablesComponent,
-          PsychologistDashboardComponent,
+    PsychologistDashboardComponent,
+    AddCourseComponent
     
   ],
-  imports: [CommonModule, WidgetsExamplesRoutingModule, WidgetsModule],
+  imports: [CommonModule, WidgetsExamplesRoutingModule, WidgetsModule,ReactiveFormsModule,RouterModule],
 })
 export class WidgetsExamplesModule {}
