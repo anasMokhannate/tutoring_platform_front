@@ -12,6 +12,7 @@ import { PsychologistDashboardComponent } from './psychologist-dashboard/psychol
 import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
 import { AddCourseComponent } from './add-course/add-course.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { CourseEditComponent } from './course-edit/course-edit.component';
 
 @NgModule({
   declarations: [
@@ -22,9 +23,13 @@ import { ReactiveFormsModule } from '@angular/forms';
     InstructorDashboardComponent,
     TablesComponent,
     PsychologistDashboardComponent,
-    AddCourseComponent
+    AddCourseComponent,
+    CourseEditComponent
     
   ],
   imports: [CommonModule, WidgetsExamplesRoutingModule, WidgetsModule,ReactiveFormsModule,RouterModule],
+  exports: [
+    CourseEditComponent  // Ensure it's exported if it needs to be used outside this module
+  ]
 })
 export class WidgetsExamplesModule {}

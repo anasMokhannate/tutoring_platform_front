@@ -19,6 +19,7 @@
                 <td>
                     <button class="btn accept-button" (click)="acceptRequest(request)" [disabled]="request.status !== 'Pending'">Accept</button>
                     <button class="btn deny-button" (click)="denyRequest(request)" [disabled]="request.status !== 'Pending'">Deny</button>
+                    <button class="btn edit-button" routerLink="/edit-course/{{request.id}}">Modify</button>
                 </td>
             </tr>
         </tbody>
