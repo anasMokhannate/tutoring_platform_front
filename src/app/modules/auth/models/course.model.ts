@@ -1,5 +1,4 @@
-// src/app/modules/auth/models/course.model.ts
-export interface Course {
+export class Course {
     id: number;
     name: string;
     description: string;
@@ -7,5 +6,6 @@ export interface Course {
     professor: string;
     videoUrl: string;
     pdfUrl: string;
+    lastModified?: Date;
   }
   

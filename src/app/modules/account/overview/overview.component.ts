@@ -9,7 +9,8 @@ import { Course } from '../../auth/models/course.model';
 })
 export class OverviewComponent implements OnInit {
   course: Course | undefined;
-
+  comments: any[] = [];
+  newComment: string = '';
   courses: Course[] = [
     {
       id: 1,
@@ -63,7 +64,33 @@ export class OverviewComponent implements OnInit {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const courseId = +params['id'];
-      this.course = this.courses.find(course => course.id === courseId);
+      this.course = this.findCourse(courseId);
+      this.loadComments(courseId);
     });
   }
+
+  findCourse(courseId: number): Course | undefined {
+    // Assume 'courses' is an array available within the component
+    return this.courses.find(course => course.id === courseId);
+  }
+
+  loadComments(courseId: number): void {
+    // Load comments for the course
+    // This is a placeholder function. You should replace it with actual data fetching logic
+    this.comments = [
+      { author: 'Alice', text: 'Very informative course!' },
+      { author: 'Bob', text: 'Looking forward to the next lecture.' }
+    ];
+  }
+
+  addComment(): void {
+    if (this.newComment.trim()) {
+      this.comments.push({
+        author: 'Username', // Replace with actual user data
+        text: this.newComment
+      });
+      this.newComment = ''; // Clear the input after posting
+    }
+  }
 }
+

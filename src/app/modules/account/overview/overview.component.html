@@ -46,4 +46,20 @@
       </div>
     </div>
   </div>
+  
+  <!-- Comments Section -->
+  <div class="comments-section">
+    <h3>Comments</h3>
+    <div *ngFor="let comment of comments">
+      <p><strong>{{ comment.author }}</strong>: {{ comment.text }}</p>
+    </div>
+    <textarea [(ngModel)]="newComment" placeholder="Add a comment..."></textarea>
+    <button (click)="addComment()">Post Comment</button>
+  </div>
+
+  <!-- Navigation Button for Quiz -->
+  <div class="quiz-navigation">
+    <button [routerLink]="'/take-quiz/' + (course?.id)" class="btn btn-primary">Take Quiz</button>
+
+  </div>
 </div>

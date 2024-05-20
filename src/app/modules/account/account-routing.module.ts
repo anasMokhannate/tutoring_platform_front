@@ -3,12 +3,14 @@ import { RouterModule, Routes } from '@angular/router';
 import { OverviewComponent } from './overview/overview.component';
 import { AccountComponent } from './account.component';
 import { SettingsComponent } from './settings/settings.component';
-
+import { TakeQuizComponent } from './take-quiz/take-quiz.component';
 const routes: Routes = [
   {
     path: '',
     component: AccountComponent,
     children: [
+      { path: 'take-quiz/:id', 
+      component: TakeQuizComponent },
       {
         path: 'overview/:id',
         component: OverviewComponent,

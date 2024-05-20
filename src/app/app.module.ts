@@ -15,6 +15,8 @@ import { environment } from 'src/environments/environment';
 import { FakeAPIService } from './_fake/fake-api.service';
 import { MeetingRequestsModule } from './modules/widgets-examples/meeting-requests/meeting-requests.module';
 
+import { RouterModule } from '@angular/router';
+
 // #fake-end#
 
 function appInitializer(authService: AuthService) {
@@ -26,14 +28,16 @@ function appInitializer(authService: AuthService) {
 }
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent
+  ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     TranslateModule.forRoot(),
     HttpClientModule,
     ClipboardModule,
-    MeetingRequestsModule,  // Ensure MeetingRequestsModule is imported
+    MeetingRequestsModule, 
+    RouterModule, // Ensure MeetingRequestsModule is imported
     // #fake-start#
     environment.isMockEnabled
       ? HttpClientInMemoryWebApiModule.forRoot(FakeAPIService, {
