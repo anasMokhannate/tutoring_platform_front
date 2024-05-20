@@ -1,0 +1,15 @@
+<div class="quiz-container">
+    <h2>Take Quiz</h2>
+    <div *ngIf="currentQuestion">
+      <p>{{ currentQuestion.question }}</p>
+      <ul>
+        <li *ngFor="let option of currentQuestion.options" (click)="submitAnswer(option)">
+          {{ option }}
+        </li>
+      </ul>
+    </div>
+    <div *ngIf="currentQuestionIndex >= questions.length">
+      <p>Quiz completed. Your score: {{ score }}</p>
+    </div>
+  </div>
+  
