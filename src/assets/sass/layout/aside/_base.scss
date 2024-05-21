@@ -41,23 +41,23 @@
 
 		// Logo
 		.aside-logo {
-			background-color: get($aside-config, logo-bg-color);
+			background-color: rgb(25, 0, 49);
 		}
 
-		// Aside toggle
+		// Aside toggle$
 		.aside-toggle {
 			@include svg-icon-color(#494b74);
 		}
 
 		// Separator
 		.separator {
-			border-bottom-color: #282a3d;
+			border-bottom-color: #000000;
 		}
 
 		// Custom button
 		.btn-custom {
 			//$color, $icon-color, $border-color, $bg-color, $color-active, $icon-color-active, $border-color-active, $bg-color-active
-			@include button-custom-variant(#B5B5C3, null, null, rgba(63, 66, 84, 0.35), #B5B5C3, null, null, rgba(63, 66, 84, 0.35));
+			@include button-custom-variant(#B5B5C3, null, null, rgba(0, 0, 0, 0.35), #B5B5C3, null, null, rgba(0, 0, 0, 0.35));
 
 			.btn-icon {
 				color: #B5B5C3;

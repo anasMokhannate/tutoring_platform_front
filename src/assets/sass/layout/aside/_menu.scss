@@ -1,6 +1,12 @@
 //
 // Menu
 //
+// Define purple shades
+$primary: #8E44AD;  // Deep Purple as primary color
+$hover-bg: #562C74; // Darker purple for hover backgrounds
+$hover-text: $white; // White for text on hover for contrast
+$hover-detail: #B5B5C3; // Lighter purple for details like icons or bullets
+
 
 // Aside menu
 .aside-menu {
@@ -44,10 +50,10 @@
             }
 
             //$title-color, $icon-color, $bullet-color, $arrow-color, $bg-color
-            @include menu-link-default-state( #9899ac, #494b74, #9899ac, #9899ac, null);
-            @include menu-link-hover-state( $white, $primary, $primary, $white, #1b1b28);
-            @include menu-link-show-state( $white, $primary, $primary, $white, #1b1b28);
-            @include menu-link-active-state( $white, $primary, $primary, $white, #1b1b28);
+            @include menu-link-default-state( #a198ac, #2196F3, #a598ac, #a298ac, null);
+            @include menu-link-hover-state( $white, $primary, $primary, $white, #000000);
+            @include menu-link-hover-state($hover-text, $primary, $primary, $hover-text, $hover-bg);
+            @include menu-link-active-state( $white, $primary, $primary, $white, #2196F3);
         }
     }
 }
