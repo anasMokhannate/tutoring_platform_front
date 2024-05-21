@@ -1,66 +1,89 @@
-/* src/app/modules/widgets-examples/psychologist-dashboard/psychologist-dashboard.component.scss */
+@import "../../../../styles.scss";
+
+// Defining the color palette for sophistication and clarity
+$deep-purple: #8E44AD;       // Deep Purple for distinguished interactive elements
+$very-light-blue: #F0F8FF;   // Extremely Light Blue for a serene background
+$light-gray: #FDFDFD;        // Light Gray for contrast and visual comfort
+$darker-gray: #FCFCFC;       // Slightly Darker Gray for detailed accents
+$black: #000000;             // Black for definitive and strong text contrast
+$create-blue: #2196F3;       // Striking Blue for vital interactive highlights
+
 .psychologist-dashboard {
-    background-color: #ffffff;  // Set the overall background to white
-    padding: 20px;
-    border-radius: 10px;  // Soften the corners for a modern look
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
-  
+    background: linear-gradient(to bottom right, $very-light-blue, $light-gray); // Subtle yet dynamic gradient
+    padding: 25px;
+    border-radius: 15px;   // Increased radius for softer, modern edges
+    box-shadow: 0 12px 24px rgba($black, 0.15);  // More profound and spread shadow for depth
+
     h2 {
-      color: #003366;  // Darker marine blue for headers
-      margin-bottom: 20px;
+      color: $deep-purple;
+      margin-bottom: 25px;   // Slightly increased spacing for better layout
+      font-weight: 800;      // Heavier weight for prominence
+      text-shadow: 2px 2px 4px rgba($black, 0.1);
+      transition: color 0.4s, text-shadow 0.4s;
+
+      &:hover {
+        color: $create-blue;
+        text-shadow: 3px 3px 6px rgba($create-blue, 0.3);  // Enhanced shadow for striking hover effect
+      }
     }
-  
+
     table {
       width: 100%;
-      border-collapse: collapse;
-      margin-top: 20px;
-  
+      border-collapse: separate;
+      margin-top: 25px;   // Increased top margin for visual separation
+      border-spacing: 0 15px;  // More spacing between rows
+
       th, td {
-        border-bottom: 2px solid #dce4e6;  // Use only bottom border for a cleaner look
-        padding: 12px 8px;
+        padding: 15px 10px;   // Increased padding for a more comfortable visual and tactile feel
         text-align: left;
-        color: #313131;  // Dark grey for text
+        transition: background-color 0.3s, color 0.3s;
+
+        border-bottom: 3px solid $darker-gray;  // Thicker border for added style
       }
-  
+
       th {
-        background-color: #003366;  // Darker blue for headers
-        color: #ffffff;  // White text for headers
-      }
-  
-      tr {
-        transition: background-color 0.3s;
-  
+        background-color: $create-blue;
+        color: $white;
+        font-size: 18px;  // Slightly larger font for readability
+
         &:hover {
-          background-color: #e6f2ff;  // Very light blue background on hover for interactivity
+          background-color: lighten($create-blue, 5%);
+          cursor: pointer;
         }
       }
-  
-      button {
-        padding: 8px 12px;
-        margin-right: 10px;  // Increase spacing between buttons
-        border: none;
-        border-radius: 4px;
+
+      tr {
+        &:hover {
+          background-color: darken($very-light-blue, 10%);  // Deeper contrast on hover
+        }
+      }
+
+      .accept-button, .deny-button {
+        padding: 12px 24px;  // More generous padding for a better feel
+        border-radius: 6px;  // Rounded for a smoother look
         font-weight: bold;
-        color: #ffffff;  // White text on buttons
+        color: $white;
         cursor: pointer;
-        transition: background-color 0.3s, box-shadow 0.3s;
-  
+
         &.accept-button {
-          background-color: #28a745;  // Green for accept buttons
+          background-color: $deep-purple;
+
           &:hover {
-            background-color: darken(#28a745, 10%);
-            box-shadow: 0 0 8px #28a745;
+            background-color: darken($deep-purple, 10%);
+            transform: translateY(-3px);  // More noticeable elevation on hover
+            box-shadow: 0 6px 12px rgba($deep-purple, 0.5);
           }
         }
-  
+
         &.deny-button {
-          background-color: #dc3545;  // Red for deny buttons
+          background-color: $create-blue;
+
           &:hover {
-            background-color: darken(#dc3545, 10%);
-            box-shadow: 0 0 8px #dc3545;
+            background-color: darken($create-blue, 10%);
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba($create-blue, 0.5);
           }
         }
       }
     }
-  }
-  
+}

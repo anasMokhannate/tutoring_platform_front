@@ -1,15 +1,20 @@
 <div class="quiz-container">
-    <h2>Take Quiz</h2>
-    <div *ngIf="currentQuestion">
-      <p>{{ currentQuestion.question }}</p>
-      <ul>
-        <li *ngFor="let option of currentQuestion.options" (click)="submitAnswer(option)">
-          {{ option }}
-        </li>
-      </ul>
+  <h2>Take Quiz on Advanced Calculus</h2>
+  <form (ngSubmit)="submitQuiz()">
+    <div *ngFor="let question of questions; let i = index">
+      <div class="question">
+        <p>{{ question.question }}</p>
+        <ul>
+          <li *ngFor="let option of question.options" (click)="selectAnswer(option, i)" [class.selected]="selectedAnswers[i] === option">
+            {{ option }}
+          </li>
+        </ul>
+      </div>
     </div>
-    <div *ngIf="currentQuestionIndex >= questions.length">
-      <p>Quiz completed. Your score: {{ score }}</p>
-    </div>
+    <button type="submit" class="btn">Submit Quiz</button>
+  </form>
+  <div *ngIf="quizSubmitted">
+    <p>Quiz completed. Your score: {{ score }}/{{ questions.length }}</p>
+    <button (click)="restartQuiz()" class="btn">Restart Quiz</button>
   </div>
-  
+</div>

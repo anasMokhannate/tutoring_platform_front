@@ -1,12 +1,23 @@
+// Define color variables
+$deep-purple: #8E44AD;       // Deep Purple for buttons and elegant accents
+$very-light-blue: #F0F8FF;   // Extremely Light Blue for input backgrounds
+$light-gray: #FDFDFD;        // Light Gray (unused here, but defined for potential use)
+$darker-gray: #FCFCFC;       // Slightly Darker Gray for borders and subtle details
+$black: #000000;             // Black for primary text for high contrast
+$create-blue: #2196F3;       // Blue used sparingly for additional highlights
+$very-light-gray: #FEFEFE;   // Very Light Gray for background
+$white: #FFFFFF;             // White for text on buttons
+
 .add-course-form {
-    background-color: #ffffff;
+    background-color: $very-light-gray; // Very Light Gray for a clean, modern background
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba($black, 0.1); // Soft shadow for depth
 
     h2 {
-        color: #003366; // Very dark blue
-        margin-bottom: 15px;
+        color: $deep-purple; // Deep Purple for an elegant header
+        margin-bottom: 20px;
+        font-weight: bold;
     }
 
     form {
@@ -14,10 +25,10 @@
         flex-direction: column;
 
         .form-field {
-            margin-bottom: 10px;
+            margin-bottom: 20px; // More space between fields
             label {
                 font-weight: bold;
-                color: #003366; // Use the dark blue color for labels for consistency
+                color: $create-blue; // Using Create Blue for labels for consistency
                 margin-bottom: 5px;
                 display: block; // Ensure labels are on their own line
             }
@@ -26,26 +37,34 @@
             input[type="file"],
             select,
             textarea {
-                width: 100%; // Ensure full width for better layout
-                padding: 8px;
+                width: 100%; // Full width for better layout
+                padding: 10px; // More padding for better interaction
                 margin-top: 5px; // Space between label and input
-                border: 1px solid #ccc;
+                border: 2px solid $darker-gray; // Slightly darker gray for borders
                 border-radius: 4px;
+                background-color: $very-light-blue; // Extremely Light Blue for inputs
+                color: $black; // Black text for high contrast
+                &:focus {
+                    outline: none;
+                    border-color: $deep-purple; // Focus state with Deep Purple
+                    box-shadow: 0 0 5px rgba($deep-purple, 0.5); // Subtle glow on focus
+                }
             }
         }
 
         button {
-            padding: 10px 20px;
-            background-color: #28a745; // Dark green for submission button
-            color: #ffffff;
-            border: none; // Remove default border
+            padding: 12px 24px;
+            background-color: $deep-purple; // Deep Purple for the submission button
+            color: $white;
+            border: none;
             border-radius: 4px;
             cursor: pointer;
             transition: background-color 0.3s, box-shadow 0.3s; // Smooth transition for hover effects
             margin-top: 20px;
+            font-size: 16px; // Larger font size for readability
             &:hover {
-                background-color: darken(#28a745, 10%); // Darken button on hover for visual feedback
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25); // Slight shadow for depth
+                background-color: darken($deep-purple, 10%); // Darken button on hover for visual feedback
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); // Increased shadow for depth
             }
         }
     }

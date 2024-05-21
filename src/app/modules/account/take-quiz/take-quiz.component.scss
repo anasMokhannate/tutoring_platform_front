@@ -1,30 +1,61 @@
+// Color palette definitions
+$deep-purple: #8E44AD;       // Deep Purple for buttons and elegant accents
+$very-light-blue: #F0F8FF;   // Extremely Light Blue for backgrounds
+$light-gray: #FDFDFD;        // Light Gray for alternating row colors
+$darker-gray: #FCFCFC;       // Slightly Darker Gray for borders and subtle details
+$black: #000000;             // Black for primary text for high contrast
+$create-blue: #2196F3;       // Blue used sparingly for additional highlights
+$very-light-gray: #FEFEFE;   // Very Light Gray for readability
+
 .quiz-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  
-    h2 {
-      color: #003366;
-    }
-  
-    ul {
-      list-style: none;
-      padding: 0;
-  
-      li {
-        cursor: pointer;
-        background-color: #e9ecef;
-        padding: 10px;
-        margin-top: 5px;
-        border-radius: 4px;
-        &:hover {
-          background-color: #dde2e6;
-        }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: $very-light-blue;  // Light blue for a fresh, modern background
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba($black, 0.15);
+  width: 80%;
+  margin: auto;
+
+  h2 {
+    color: $create-blue;  // Create-blue for a vibrant, eye-catching header
+    margin-bottom: 15px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+
+    li {
+      cursor: pointer;
+      background-color: $very-light-gray;  // Very light gray for list items
+      padding: 12px 20px;
+      margin-top: 10px;
+      border-radius: 6px;
+      transition: background-color 0.3s;
+
+      &:hover {
+        background-color: $light-gray;  // Slightly darker on hover for subtle interaction
+        box-shadow: 0 2px 5px rgba($black, 0.2);
       }
     }
   }
-  
+
+  button {
+    padding: 10px 15px;
+    background-color: $deep-purple;  // Deep purple for a dignified button appearance
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 20px;
+
+    &:hover {
+      background-color: lighten($deep-purple, 10%);  // Lighten the purple on hover for a subtle effect
+      box-shadow: 0 2px 5px rgba($deep-purple, 0.4);  // Additional purple shadow for depth
+    }
+  }
+}

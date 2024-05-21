@@ -1,7 +1,7 @@
 body {
-  background-color: #001f3f; // Bleu marine
-  color: #ffffff; // Texte blanc
-  font-family: 'Arial', sans-serif;
+  background: linear-gradient(to right, #3498db, #8e44ad); /* Blue to purple gradient */
+  color: #ffffff; /* White text for contrast */
+  font-family: 'Helvetica Neue', Arial, sans-serif;
   height: 100vh;
   margin: 0;
   display: flex;
@@ -10,43 +10,43 @@ body {
 }
 
 #kt_login_signin_form {
-  background-color: rgba(255, 255, 255, 0.9); // Blanc avec transparence
+  background-color: rgba(255, 255, 255, 0.8); /* White with slight transparency */
   padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
   max-width: 400px;
   width: 100%;
 }
 
 .text-dark {
-  color: #001f3f !important; // Texte bleu marine
+  color: #2c3e50 !important; /* Dark slate grey text */
 }
 
 .link-primary {
-  color: #007bff !important; // Liens en bleu clair
+  color: #3498db !important; /* Link color as blue */
 }
 
 .form-control {
-  background-color: #ffffff; // Champs de saisie blancs
-  color: #001f3f; // Texte des champs de saisie en bleu marine
+  background-color: #ffffff; /* White input fields */
+  color: #2c3e50; /* Grey text in input fields for contrast */
 }
 
 .btn-primary {
-  background-color: #001f3f; // Boutons en bleu marine
-  border-color: #001f3f;
-  color: #ffffff; // Texte des boutons en blanc
+  background-color: #8e44ad; /* Purple button */
+  border-color: #8e44ad;
+  color: #ffffff; /* White text on button */
 }
 
 .btn-primary:hover {
-  background-color: #004080; // Bleu plus clair au survol
-  border-color: #004080;
+  background-color: #732d91; /* Darker purple on hover */
+  border-color: #732d91;
 }
 
 .bg-light-info {
-  background-color: rgba(0, 123, 255, 0.2) !important; // Bleu clair avec transparence
+  background-color: rgba(52, 152, 219, 0.2) !important; /* Light blue background */
 }
 
 .alert-danger {
-  background-color: rgba(255, 0, 0, 0.1) !important; // Rouge clair avec transparence
-  color: #ff0000 !important; // Texte rouge
+  background-color: rgba(231, 76, 60, 0.1) !important; /* Light red transparent background for alerts */
+  color: #e74c3c !important; /* Red text for alerts */
 }

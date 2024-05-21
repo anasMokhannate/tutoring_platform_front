@@ -1,81 +1,98 @@
 @import "../../../../styles.scss";
-// Palette SCSS
-$dark-blue: #003366; 
-$create-blue: #2196F3; 
-$white: #FFFFFF; 
-$very-dark-blue: #001a33; 
-$light-gray: #f8f9fa; 
+
+// Color palette definitions
+$deep-purple: #8E44AD;       // Deep Purple for buttons and elegant accents
+$very-light-blue: #F0F8FF;   // Extremely Light Blue for table backgrounds
+$light-gray: #FDFDFD;        // Light Gray for alternating row colors
+$darker-gray: #FCFCFC;       // Slightly Darker Gray for borders and subtle details
+$black: #000000;             // Black for primary text for high contrast
+$create-blue: #2196F3;       // Blue used sparingly for additional highlights
+$very-light-gray: #FEFEFE;   // Very Light Gray for the main background
+$button-blue: #D6EAF8;       // Light blue similar to the button in the image
+
 .meeting-requests {
-  background-color: $white;
+  background-color: $very-light-gray;  // Very Light Gray for the main background
   padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba($black, 0.05); // Subtle shadow for depth
 
   h2 {
-    color: $dark-blue;
-    margin-bottom: 15px; // Ensure spacing under headers for visual separation
+    color: $deep-purple;                     // Deep Purple for readable headers
+    margin-bottom: 20px;               // Adds visual separation
+    font-weight: bold;
   }
 
   .form-group {
-    margin-bottom: 20px; // Spacing between form groups
+    margin-bottom: 20px;               // Consistent spacing
 
     label {
-      color: $dark-blue;
-      font-weight: 600; // Slightly bolder for better readability
+      color: $black;                   // Black labels for clarity and contrast
+      font-weight: 600;                // Bold for emphasis
     }
   }
 
   .btn-request {
-    background-color: $create-blue;
+    background-color: $button-blue;    // Light Blue for the button as seen in the image
     border: none;
-    border-radius: 4px;
-    color: $white;
-    padding: 8px 16px; // Adequate padding for aesthetic alignment
-    font-size: 16px; // Appropriately sized font for readability and impact
-    text-transform: uppercase; // Styling to match your 'Create' button
+    border-radius: 5px;
+    color: $white;                     // White text for contrast
+    padding: 10px 20px;
+    font-size: 16px;
+    text-transform: uppercase;
     cursor: pointer;
-    transition: background-color 0.3s, box-shadow 0.3s;
-    margin-top: 30px; // Increased top margin to push the button downward
+    transition: all 0.3s ease;
+    margin-top: 30px;
 
     &:hover {
-      background-color: darken($create-blue, 10%); // Darken for a subtle hover effect
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); // Shadow for depth on hover
+      background-color: darken($button-blue, 10%); // Dynamic hover effect
+      box-shadow: 0 4px 8px rgba($black, 0.2);     // Enhanced shadow for feedback
     }
   }
 
   .form-control {
-    border: 1px solid $dark-blue;
+    border: 1px solid $darker-gray;
     &:focus {
-      border-color: lighten($dark-blue, 10%); // Lighten for a focus highlight
-      box-shadow: 0 0 0 0.2rem rgba($dark-blue, 0.25); // Subtle focus shadow
+      border-color: $deep-purple;      // Focus highlight with deep purple
+      box-shadow: 0 0 8px rgba($deep-purple, 0.2);
+      outline: none;
     }
   }
 
   textarea {
-    min-height: 100px;
+    min-height: 150px;                 // Ample space for text entry
   }
+
   .demand-status {
-    margin-top: 30px;
+    margin-top: 25px;
 
     h3 {
-        color: $dark-blue;
+      color: $deep-purple;                  // Black for section headers
+      font-weight: 600;
     }
 
     .table {
-        width: 100%;
-        border-collapse: collapse;
-        th, td {
-            border: 1px solid $dark-blue;
-            padding: 8px;
-            text-align: left;
-        }
-        th {
-            background-color: $very-dark-blue;
-            color: $white;
-        }
-        tr:nth-child(odd) {
-            background-color: $light-gray;
-        }
-    }
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0 10px;         // Spacing for visual clarity between rows
 
-}}
+      th, td {
+        border: 1px solid $darker-gray;
+        padding: 12px;
+        text-align: left;
+      }
+
+      th {
+        background-color: $very-light-blue;  // Very Light Blue for table headers
+        color: $black;                       // Black text for contrast
+      }
+
+      tr:nth-child(odd) {
+        background-color: $light-gray;      // Light Gray for row variation
+      }
+
+      tr:nth-child(even) {
+        background-color: $very-light-blue; // Very Light Blue for even rows, maintaining the theme
+      }
+    }
+  }
+}

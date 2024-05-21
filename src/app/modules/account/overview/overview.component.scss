@@ -1,59 +1,62 @@
 @import "../../../../styles.scss"; // Importing global styles
 
-// Color definitions
-$very-dark-blue: #001a33;  // A deeper shade for a profound visual impact
-$white: #ffffff;  // Bright white for contrast and readability
-$accent-green: #4CAF50;  // Vibrant green for call-to-action elements
+// Color definitions based on your preferred palette
+$light-blue: #D6EAF8;
+$deep-purple: #8E44AD;
+$very-light-gray: #FEFEFE;  // Now the lightest color in the palette
+$light-gray: #FDFDFD;       // Light gray for soft contrasts
+$darker-gray: #FCFCFC;      // For borders and subtle accents
+$black: #000000;            // For high contrast text
 
 .card {
-    background-color: $white;
+    background: linear-gradient(to bottom right, $very-light-gray, $light-gray);
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Soft shadow for depth
-    margin-bottom: 20px;  // Bottom margin for spacing between cards
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  // Subtle shadow for depth
+    margin-bottom: 20px;  // Spacing between cards
 
     .card-header {
-        background-color: $very-dark-blue;
-        color: $white;
-        padding: 15px 20px;  // Padding for ample space around the header text
+        background-color: $light-blue;
+        color: $deep-purple;
+        padding: 15px 20px;
 
         .card-title h3 {
-            margin: 0;  // Remove margin for clean header alignment
+            margin: 0;  // Clean header alignment
         }
     }
 
     .card-body {
         padding: 20px;
-        color: $very-dark-blue;  // Dark blue text for body content
+        color: $black;  // Black text for best readability
 
         .row {
-            margin-bottom: 15px;  // Space between rows
+            margin-bottom: 15px;  // Consistent spacing between rows
 
             label {
-                color: $very-dark-blue;  // Labels in dark blue for consistency
-                font-weight: bold;  // Bold font for label emphasis
-                text-transform: uppercase;  // Uppercase text for a modern look
+                color: $black;  // Labels are in black for clarity
+                font-weight: bold;
+                text-transform: uppercase;
             }
 
             .fw-bold {
-                color: darken($very-dark-blue, 10%);  // Slightly darker text for better focus
+                color: $black;  // Uniform text color for consistency
             }
 
-            a.btn-secondary {  // Style for download button
-                background-color: $accent-green;
-                color: $white;
+            a.btn-secondary {  // Download button styling
+                background-color: $light-blue;
+                color: $deep-purple;
                 padding: 8px 16px;
                 border-radius: 4px;
                 text-transform: uppercase;
                 transition: background-color 0.2s;
 
                 &:hover {
-                    background-color: darken($accent-green, 10%);  // Darken on hover for interaction
+                    background-color: darken($light-blue, 10%);  // Interactive hover effect
                 }
             }
 
             video {
-                width: 100%;  // Full width for video to utilize available space
-                border-radius: 4px;  // Rounded corners for a modern appearance
+                width: 100%;  // Full width for better engagement
+                border-radius: 4px;  // Softened edges for modern look
             }
         }
     }
@@ -62,34 +65,35 @@ $accent-green: #4CAF50;  // Vibrant green for call-to-action elements
 .comments-section, .quiz-navigation {
     margin-top: 20px;
     padding: 15px;
-    background-color: #f8f9fa;
+    background-color: $very-light-gray;
     border-radius: 5px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   
     h3 {
-      color: #003366;
+      color: $black;  // Consistent black for headers in these sections
     }
   
     textarea {
       width: 100%;
       margin-top: 10px;
       padding: 8px;
-      border: 1px solid #ccc;
+      border: 1px solid $darker-gray;
       border-radius: 4px;
+      background-color: $very-light-gray;
+      color: $black;  // Text also in black for readability
     }
   
     button {
       margin-top: 10px;
-      background-color: #28a745;
-      color: white;
+      background-color: $light-blue;
+      color: $deep-purple;
       border: none;
       border-radius: 4px;
       padding: 10px 20px;
       cursor: pointer;
   
       &:hover {
-        background-color: darken(#28a745, 10%);
+        background-color: darken($light-blue, 10%);
       }
     }
-  }
-  
+}

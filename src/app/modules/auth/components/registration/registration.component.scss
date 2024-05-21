@@ -11,3 +11,99 @@
     }
   }
 }
+// General page styling
+body {
+  background: linear-gradient(to right, #3498db, #8e44ad); // Blue to purple gradient
+  color: #ffffff; // White text for contrast
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+// #kt_login_signup_form {
+//   background-color: rgba(255, 255, 255, 0.8); // White with slight transparency
+//   padding: 2rem;
+//   border-radius: 15px;
+//   box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); // Soft shadow
+//   max-width: 400px;
+//   width: 100%;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+// }
+
+.text-gray-400 {
+  color: #bdc3c7; // Light gray for secondary text
+}
+
+.link-primary {
+  color: #3498db !important; // Link color as blue
+  font-weight: bold;
+}
+
+.form-control {
+  background-color: #ffffff; // White input fields
+  color: #2c3e50; // Grey text in input fields for contrast
+  border: none;
+  border-bottom: 2px solid #bdc3c7; // Subtle border for inputs
+  padding: 0.75rem;
+  margin-bottom: 1rem; // Space between inputs
+}
+
+.form-control.is-invalid {
+  border-bottom-color: #e74c3c; // Red color for error states
+}
+
+.form-control.is-valid {
+  border-bottom-color: #2ecc71; // Green color for valid states
+}
+
+.btn-primary {
+  background-color: #8e44ad; // Purple button
+  border-color: #8e44ad;
+  color: #ffffff; // White text on button
+  margin-top: 20px; // Margin top for separation from form
+}
+
+.btn-primary:hover {
+  background-color: #732d91; // Darker purple on hover
+  border-color: #732d91;
+}
+
+.btn-light-primary {
+  background-color: #85c1e9; // Light blue button
+  color: #ffffff;
+  margin-top: 10px;
+}
+
+.btn-light-primary:hover {
+  background-color: #3498db; // Darker blue on hover
+}
+
+.alert-danger {
+  background-color: rgba(231, 76, 60, 0.1); // Light red transparent background for alerts
+  color: #e74c3c; // Red text for alerts
+  font-weight: bold;
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+// Utility classes for spacing and alignment
+.mb-10 {
+  margin-bottom: 10px;
+}
+
+.mb-lg-15 {
+  margin-bottom: 15px;
+}
+
+.fv-row {
+  display: flex;
+  flex-direction: column;
+}
+

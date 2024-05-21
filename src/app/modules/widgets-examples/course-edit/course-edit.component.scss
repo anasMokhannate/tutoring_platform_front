@@ -1,34 +1,73 @@
+@import "../../../../styles.scss";
+
+// Assuming these variables are defined in the styles.scss or directly here
+$deep-purple: #8E44AD;
+$very-light-blue: #F0F8FF;
+$light-gray: #FDFDFD;
+$darker-gray: #FCFCFC;
+$black: #000000;
+$create-blue: #2196F3;
+$very-light-gray: #FEFEFE;
+$white: #FFFFFF;
+
 .edit-course-form {
-    background-color: #fff;
+    background-color: $very-light-gray; // Very Light Gray for a clean, modern background
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba($black, 0.1); // Soft shadow for depth
 
     form {
         display: flex;
         flex-direction: column;
 
-        label, input, textarea {
-            width: 100%;
-            margin-bottom: 10px;
-        }
+        .form-field {
+            margin-bottom: 20px; // More space between fields for a cleaner layout
+            label {
+                display: block; // Ensure labels are on their own line
+                font-weight: bold;
+                color: $create-blue; // Using Create Blue for labels for consistency
+                margin-bottom: 5px;
+            }
 
-        input[type="file"] {
-            border: 1px solid #ccc;
+            input[type="text"],
+            textarea {
+                width: 100%; // Full width for better layout
+                padding: 10px; // More padding for better interaction
+                margin-top: 5px; // Space between label and input
+                border: 2px solid $darker-gray; // Slightly darker gray for borders
+                border-radius: 4px;
+                background-color: $very-light-blue; // Extremely Light Blue for inputs
+                color: $black; // Black text for high contrast
+                &:focus {
+                    outline: none;
+                    border-color: $deep-purple; // Focus state with Deep Purple
+                    box-shadow: 0 0 5px rgba($deep-purple, 0.5); // Subtle glow on focus
+                }
+            }
+
+            input[type="file"] {
+                border: 2px solid $darker-gray;
+                background-color: $light-gray;
+                padding: 8px;
+                border-radius: 4px;
+                &:hover {
+                    border-color: $create-blue; // Highlight file input on hover
+                }
+            }
         }
 
         button {
-            padding: 10px;
-            background-color: #4CAF50;
-            color: white;
-            cursor: pointer;
+            padding: 12px 24px;
+            background-color: $deep-purple; // Deep Purple for the submission button
+            color: $white;
             border: none;
             border-radius: 4px;
-            transition: background-color 0.3s;
-
+            cursor: pointer;
+            transition: background-color 0.3s, box-shadow 0.3s; // Smooth transition for hover effects
+            margin-top: 20px;
             &:hover {
-                background-color: darken(#4CAF50, 10%);
-                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+                background-color: darken($deep-purple, 10%); // Darken button on hover for visual feedback
+                box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); // Increased shadow for depth
             }
         }
     }

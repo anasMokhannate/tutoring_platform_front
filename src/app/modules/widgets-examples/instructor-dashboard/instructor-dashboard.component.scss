@@ -1,0 +1,82 @@
+@import "../../../../styles.scss";
+
+// Color palette definitions
+$deep-purple: #8E44AD;       // Deep Purple for buttons and elegant accents
+$very-light-blue: #F0F8FF;   // Extremely Light Blue for table backgrounds
+$light-gray: #FDFDFD;        // Light Gray for alternating row colors
+$darker-gray: #FCFCFC;       // Slightly Darker Gray for borders and subtle details
+$black: #000000;             // Black for primary text for high contrast
+$create-blue: #2196F3;       // Blue used sparingly for additional highlights
+$very-light-gray: #FEFEFE;   // Very Light Gray for readability
+
+.instructor-dashboard {
+    background-color: $very-light-gray;  // Very Light Gray for a clean, modern background
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba($black, 0.1);  // Updated shadow for more depth
+
+    h2 {
+      color: $deep-purple;  // Deep Purple for a rich, elegant header
+      margin-bottom: 20px;
+      font-weight: bold;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      
+      th, td {
+        border-bottom: 1px solid $darker-gray;  // Lightened border for less intrusion
+        padding: 15px;  // Increased padding for better spacing
+        text-align: left;
+        background-color: $very-light-blue;  // Extremely light blue for a fresh table background
+      }
+
+      th {
+        background-color: $create-blue;  // Vibrant Create-blue for headers
+        color: $very-light-gray;  // Improved readability with Very Light Gray
+        font-weight: bold;  // Bold headers for emphasis
+      }
+
+      tr:nth-child(odd) {
+        background-color: $light-gray;  // Light Gray for alternating rows, subtle and clean
+      }
+
+      .btn {
+        visibility: visible;
+        opacity: 1;
+        z-index: 10;
+        padding: 10px 16px;  // Uniform padding for better tactile feel
+        border-radius: 4px;
+        font-weight: bold;
+        color: $white;  // White text for high contrast on buttons
+        cursor: pointer;
+        transition: background-color 0.3s, box-shadow 0.3s;
+
+        &:hover {
+          box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);  // Enhanced hover shadow
+        }
+      }
+
+      .accept-button {
+        background-color: $deep-purple;  // Deep Purple for a dignified look on accept button
+        &:hover {
+          background-color: darken($deep-purple, 10%);
+        }
+      }
+
+      .deny-button {
+        background-color: $black;  // Black for deny button for a stark, clear visual cue
+        &:hover {
+          background-color: darken($black, 10%);
+        }
+      }
+
+      .edit-button {
+        background-color: $create-blue;  // Create-blue for edit button to stand out
+        &:hover {
+          background-color: darken($create-blue, 10%);
+        }
+      }
+    }
+}
