@@ -73,6 +73,6 @@ export class ListsComponent implements OnInit {
   }
 
   navigateToOverview(course: Course): void {
-    this.router.navigate(['/account/overview', course.id]);
+    this.router.navigate(['/crafted/account/overview', course.id]);
   }
 }

@@ -9,15 +9,13 @@ import { MeetingRequestsComponent } from './meeting-requests/meeting-requests.co
 import { PsychologistDashboardComponent } from './psychologist-dashboard/psychologist-dashboard.component';
 import { InstructorDashboardComponent } from './instructor-dashboard/instructor-dashboard.component';
 import { AddCourseComponent } from './add-course/add-course.component';
-import { CourseEditComponent } from './course-edit/course-edit.component';
+
 
 const routes: Routes = [
   {
     path: '',
     component: WidgetsExamplesComponent,
     children: [
-      { path: 'course-edit/:id', 
-      component: CourseEditComponent },
 
       {
         path: 'add-course',

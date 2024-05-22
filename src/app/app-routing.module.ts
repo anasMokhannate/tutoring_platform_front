@@ -17,7 +17,11 @@ export const routes: Routes = [
   component: CourseEditComponent },
 // Redirect to login page by default
   { path: 'lists', component: ListsComponent, canActivate: [AuthGuard] }, // Protect the lists route
-  { path: 'account/overview/:id', component: OverviewComponent, canActivate: [AuthGuard] }, // Protect the overview route
+  { path: 'account/overview/:id',
+          
+
+
+         component: OverviewComponent, canActivate: [AuthGuard] }, // Protect the overview route
   { path: 'add-course', component: AddCourseComponent },
   { path: 'take-quiz/:id', component: TakeQuizComponent },
   {

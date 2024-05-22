@@ -6,9 +6,9 @@
 
 // Theme colors
 // Primary
-$primary:       									if(isDarkMode(), #3699FF, #009EF7);
-$primary-active:    								if(isDarkMode(), #187DE4, #0095E8);
-$primary-light:    								    if(isDarkMode(), #212E48, #F1FAFF);
+$primary:       									if(isDarkMode(), #a836ff, #8c00f7);
+$primary-active:    								if(isDarkMode(), #8c18e4, #7c00e8);
+$primary-light:    								    if(isDarkMode(), #382148, #F1FAFF);
 $primary-inverse:  									#FFFFFF;
 
 // Success
